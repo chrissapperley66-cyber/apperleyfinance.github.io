@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apperley Finance | Business & Finance Support</title>
-    <meta name="description" content="Apperley Finance provides practical business, financial administration and operational support for individuals and small businesses.">
+
+    <title>Apperley Finance | Practical Finance & Excel Support</title>
+
+    <meta name="description" content="Apperley Finance provides practical finance, Excel spreadsheet and business support for individuals and small businesses.">
 
     <style>
         * {
@@ -14,168 +15,462 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
             color: #1f2937;
-            background: #f7f9fc;
+            background: #f5f8fa;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
         header {
-            background: #102a43;
+            background: #0b1f33;
             color: white;
-            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #25b8a6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
         }
 
         nav a {
             color: white;
-            text-decoration: none;
-            margin-left: 25px;
             font-size: 0.95rem;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #25b8a6;
         }
 
+        /* HERO */
         .hero {
-            background: white;
-            padding: 90px 8%;
-            text-align: center;
+            background: linear-gradient(135deg, #0b1f33, #123d5a);
+            color: white;
+            padding: 95px 25px;
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
         .hero h1 {
             font-size: 3rem;
-            color: #102a43;
+            line-height: 1.15;
             margin-bottom: 20px;
         }
 
+        .hero h1 span {
+            color: #25b8a6;
+        }
+
         .hero p {
-            max-width: 700px;
-            margin: 0 auto 30px;
             font-size: 1.15rem;
-            color: #52606d;
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #e3edf4;
         }
 
-        .button {
+        .btn {
             display: inline-block;
-            background: #147d92;
+            padding: 13px 24px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: #25b8a6;
             color: white;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
         }
 
-        .button:hover {
-            background: #0f6171;
+        .btn-primary:hover {
+            background: #1d9688;
         }
 
+        .btn-secondary {
+            border: 1px solid #25b8a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #25b8a6;
+        }
+
+        .hero-box {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 14px;
+        }
+
+        .hero-box h3 {
+            margin-bottom: 15px;
+            color: #25b8a6;
+        }
+
+        .hero-box p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* GENERAL */
         section {
-            padding: 70px 8%;
+            padding: 75px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
         }
 
         .section-title {
             text-align: center;
-            color: #102a43;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #0b1f33;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+            color: #667085;
+        }
+
+        /* SERVICES */
+        .services {
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #e3e8ed;
+            box-shadow: 0 5px 18px rgba(15, 30, 45, 0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(15, 30, 45, 0.1);
+        }
+
+        .card-icon {
             font-size: 2rem;
             margin-bottom: 15px;
         }
 
-        .section-intro {
+        .card h3 {
+            color: #0b1f33;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #667085;
+        }
+
+        /* EXCEL TOOLS */
+        .excel-section {
+            background: #eef7f6;
+        }
+
+        .excel-intro {
+            max-width: 800px;
+            margin: -20px auto 40px;
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 40px;
             color: #52606d;
         }
 
-        .services {
+        .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
 
-        .service {
+        .tool-card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-
-        .service h3 {
-            color: #102a43;
-            margin-bottom: 12px;
-        }
-
-        .service p {
-            color: #52606d;
-        }
-
-        .about {
-            background: #eaf2f8;
-        }
-
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            margin-bottom: 18px;
-            color: #334e68;
-        }
-
-        .contact {
-            background: white;
-            text-align: center;
-        }
-
-        .contact p {
-            margin-bottom: 12px;
-            color: #52606d;
-        }
-
-        .contact a {
-            color: #147d92;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        footer {
-            background: #102a43;
-            color: white;
-            text-align: center;
             padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #dce7e6;
+            box-shadow: 0 4px 14px rgba(15, 30, 45, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .tool-card h3 {
+            color: #0b1f33;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            color: #667085;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #0b1f33;
+            color: white;
+            padding: 11px 16px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #25b8a6;
+        }
+
+        .tools-note {
+            margin-top: 35px;
+            text-align: center;
+            color: #667085;
             font-size: 0.9rem;
         }
 
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
+        /* CUSTOM CTA */
+        .custom-cta {
+            margin-top: 45px;
+            padding: 35px;
+            background: #0b1f33;
+            color: white;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .custom-cta h3 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+
+        .custom-cta p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: #dce7ef;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 2.2rem;
+            color: #0b1f33;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            margin-bottom: 15px;
+            color: #52606d;
+        }
+
+        .about-box {
+            background: #eef7f6;
+            padding: 30px;
+            border-left: 5px solid #25b8a6;
+            border-radius: 8px;
+        }
+
+        .about-box h3 {
+            color: #0b1f33;
+            margin-bottom: 12px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #f5f8fa;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(15, 30, 45, 0.07);
+        }
+
+        .contact-box h2 {
+            color: #0b1f33;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        .email-button {
+            display: inline-block;
+            background: #25b8a6;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .email-button:hover {
+            background: #1d9688;
+        }
+
+        /* DISCLAIMER */
+        .disclaimer {
+            background: #e9eef2;
+            padding: 25px;
+            text-align: center;
+            color: #667085;
+            font-size: 0.85rem;
+        }
+
+        .disclaimer strong {
+            color: #394b59;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0b1f33;
+            color: #dce7ef;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        footer .footer-brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        footer .footer-brand span {
+            color: #25b8a6;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            .hero-container,
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
-            nav a {
-                margin: 0 8px;
+            .service-grid,
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.4rem;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .service-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
             }
 
             section {
-                padding: 55px 6%;
+                padding: 55px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 1.9rem;
             }
         }
     </style>
@@ -183,134 +478,489 @@
 
 <body>
 
-<header>
-    <div class="logo">Apperley Finance</div>
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
 
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+            <a href="#" class="logo">
+                Apperley <span>Finance</span>
+            </a>
 
-<section class="hero">
-    <h1>Business & Finance Support</h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#excel-tools">Free Excel Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-    <p>
-        Practical financial administration, business support and operational assistance
-        for individuals and small businesses.
-    </p>
+        </div>
+    </header>
 
-    <a href="#contact" class="button">Get in Touch</a>
-</section>
 
-<section id="services">
-    <h2 class="section-title">Our Services</h2>
+    <!-- HERO -->
+    <section class="hero">
 
-    <p class="section-intro">
-        Flexible support designed to help you stay organised, understand your numbers
-        and manage your business more effectively.
-    </p>
+        <div class="hero-container">
 
-    <div class="services">
+            <div>
 
-        <div class="service">
-            <h3>Financial Administration</h3>
-            <p>
-                Support with financial records, expense tracking, invoices,
-                documentation and general financial administration.
-            </p>
+                <h1>
+                    Practical Finance &amp;
+                    <span>Excel Support</span>
+                </h1>
+
+                <p>
+                    Straightforward financial and spreadsheet support for individuals,
+                    students and small businesses. Helping you understand your numbers,
+                    organise your finances and make better-informed decisions.
+                </p>
+
+                <a href="#excel-tools" class="btn btn-primary">
+                    Free Excel Tools
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Get in Touch
+                </a>
+
+            </div>
+
+            <div class="hero-box">
+
+                <h3>Finance made practical</h3>
+
+                <p>
+                    From budgeting and cash flow to income statements and
+                    customised Excel spreadsheets, Apperley Finance focuses on
+                    making financial information easier to understand and use.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="service">
-            <h3>Budgeting & Cost Control</h3>
-            <p>
-                Help with preparing budgets, monitoring expenditure and keeping
-                track of business costs.
-            </p>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>What I Can Help With</h2>
+
+                <p>
+                    Practical support designed around real-world financial,
+                    business and Excel requirements.
+                </p>
+
+            </div>
+
+
+            <div class="service-grid">
+
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Financial Analysis</h3>
+                    <p>
+                        Help understanding financial information, performance,
+                        costs, margins and key financial measures.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Excel &amp; Spreadsheets</h3>
+                    <p>
+                        Build practical Excel spreadsheets with formulas,
+                        calculations, summaries and easy-to-use layouts.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">💷</div>
+                    <h3>Budgeting</h3>
+                    <p>
+                        Create budgets and planning tools to help track income,
+                        spending and financial targets.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Cash Flow</h3>
+                    <p>
+                        Understand when money comes in, when it goes out and
+                        how cash flow affects financial planning.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Business Support</h3>
+                    <p>
+                        Practical spreadsheet and financial organisation for
+                        freelancers, sole traders and small businesses.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Finance Learning</h3>
+                    <p>
+                        Straightforward explanations of finance and accounting
+                        concepts for students and beginners.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="service">
-            <h3>Business Support</h3>
-            <p>
-                Practical administrative and operational support to help businesses
-                stay organised and running efficiently.
+    </section>
+
+
+    <!-- FREE EXCEL TOOLS -->
+    <section class="excel-section" id="excel-tools">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Free Excel Finance Tools</h2>
+
+                <p>
+                    Download practical Excel templates and see the type of
+                    spreadsheet work Apperley Finance can create.
+                </p>
+
+            </div>
+
+
+            <p class="excel-intro">
+                These free templates are designed to help you organise financial
+                information, practise using Excel and demonstrate the type of
+                practical spreadsheet support available.
             </p>
+
+
+            <div class="tools-grid">
+
+
+                <!-- PERSONAL BUDGET -->
+                <div class="tool-card">
+
+                    <div class="tool-icon">💷</div>
+
+                    <h3>Personal Budget Planner</h3>
+
+                    <p>
+                        Track monthly income and spending and see where your
+                        money is going.
+                    </p>
+
+                    <a
+                        href="Apperley_Finance_Personal_Budget_Planner.xlsx"
+                        class="download-btn"
+                        download
+                    >
+                        Download Excel
+                    </a>
+
+                </div>
+
+
+                <!-- CASH FLOW -->
+                <div class="tool-card">
+
+                    <div class="tool-icon">💰</div>
+
+                    <h3>Cash-Flow Planner</h3>
+
+                    <p>
+                        Plan money coming in and going out and understand
+                        your expected cash position.
+                    </p>
+
+                    <a
+                        href="Apperley_Finance_Simple_Cash_Flow_Planner.xlsx"
+                        class="download-btn"
+                        download
+                    >
+                        Download Excel
+                    </a>
+
+                </div>
+
+
+                <!-- INCOME STATEMENT -->
+                <div class="tool-card">
+
+                    <div class="tool-icon">📊</div>
+
+                    <h3>Income Statement / Profit &amp; Loss</h3>
+
+                    <p>
+                        Record revenue, cost of sales and operating expenses,
+                        then calculate gross profit, operating profit and
+                        profit margins.
+                    </p>
+
+                    <a
+                        href="Apperley_Finance_Income_Statement.xlsx"
+                        class="download-btn"
+                        download
+                    >
+                        Download Excel
+                    </a>
+
+                </div>
+
+
+                <!-- BUDGET VS ACTUAL -->
+                <div class="tool-card">
+
+                    <div class="tool-icon">📈</div>
+
+                    <h3>Budget vs Actual</h3>
+
+                    <p>
+                        Compare planned income and expenditure against actual
+                        results and identify differences.
+                    </p>
+
+                    <a
+                        href="Apperley_Finance_Budget_vs_Actual.xlsx"
+                        class="download-btn"
+                        download
+                    >
+                        Download Excel
+                    </a>
+
+                </div>
+
+
+                <!-- DEBT TRACKER -->
+                <div class="tool-card">
+
+                    <div class="tool-icon">💳</div>
+
+                    <h3>Debt Repayment Tracker</h3>
+
+                    <p>
+                        Organise debts, balances and repayments in one place
+                        to help monitor progress.
+                    </p>
+
+                    <a
+                        href="Apperley_Finance_Debt_Repayment_Tracker.xlsx"
+                        class="download-btn"
+                        download
+                    >
+                        Download Excel
+                    </a>
+
+                </div>
+
+
+                <!-- HOUSEHOLD BILLS -->
+                <div class="tool-card">
+
+                    <div class="tool-icon">🏠</div>
+
+                    <h3>Household Bills Tracker</h3>
+
+                    <p>
+                        Keep regular household bills organised and monitor
+                        payment amounts and dates.
+                    </p>
+
+                    <a
+                        href="Apperley_Finance_Household_Bills_Tracker.xlsx"
+                        class="download-btn"
+                        download
+                    >
+                        Download Excel
+                    </a>
+
+                </div>
+
+
+                <!-- BUSINESS INCOME EXPENSES -->
+                <div class="tool-card">
+
+                    <div class="tool-icon">🏢</div>
+
+                    <h3>Small Business Income &amp; Expenses</h3>
+
+                    <p>
+                        Record business income and expenses and create a simple
+                        overview of financial activity.
+                    </p>
+
+                    <a
+                        href="Apperley_Finance_Business_Income_Expenses.xlsx"
+                        class="download-btn"
+                        download
+                    >
+                        Download Excel
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOM EXCEL CTA -->
+            <div class="custom-cta">
+
+                <h3>Need a Spreadsheet Built for You?</h3>
+
+                <p>
+                    If you need something more specific, Apperley Finance can
+                    create customised Excel spreadsheets designed around your
+                    personal, student or business requirements.
+                </p>
+
+                <a href="#contact" class="btn btn-primary">
+                    Ask About Custom Excel Support
+                </a>
+
+            </div>
+
+
+            <p class="tools-note">
+                These templates are provided for organisational and educational
+                purposes. They do not constitute financial, investment, tax,
+                accounting or legal advice.
+            </p>
+
         </div>
 
-        <div class="service">
-            <h3>Financial Reporting</h3>
-            <p>
-                Assistance with organising financial information and preparing
-                straightforward reports for better decision-making.
-            </p>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div>
+
+                    <h2>About Apperley Finance</h2>
+
+                    <p>
+                        Apperley Finance is focused on making finance and Excel
+                        more practical and easier to understand.
+                    </p>
+
+                    <p>
+                        Whether you need help organising financial information,
+                        understanding business figures or creating a spreadsheet,
+                        the aim is to provide clear and useful support without
+                        unnecessary jargon.
+                    </p>
+
+                    <p>
+                        The service is particularly suited to individuals,
+                        students, freelancers and small businesses that need
+                        practical financial and spreadsheet support.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>Simple. Practical. Useful.</h3>
+
+                    <p>
+                        Good financial information should help you understand
+                        what is happening, not make things more complicated.
+                    </p>
+
+                    <p>
+                        From a simple household budget to a more detailed
+                        business spreadsheet, the focus is on creating tools
+                        that are clear, organised and useful.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="service">
-            <h3>Excel & Data Support</h3>
-            <p>
-                Spreadsheet support, financial data organisation, PivotTables,
-                VLOOKUP and basic financial analysis.
-            </p>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Let's Talk</h2>
+
+                <p>
+                    Need help with an Excel spreadsheet, financial analysis,
+                    budgeting or a customised finance tool?
+                    Get in touch to discuss what you need.
+                </p>
+
+                <a
+                    href="mailto:YOUR-EMAIL-ADDRESS-HERE"
+                    class="email-button"
+                >
+                    Contact Apperley Finance
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="service">
-            <h3>Business Analysis</h3>
-            <p>
-                Practical analysis of costs, performance and financial information
-                to help identify useful business insights.
-            </p>
-        </div>
+    </section>
+
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+
+        <strong>Important:</strong>
+        Apperley Finance provides educational, organisational and spreadsheet
+        support. Information and templates on this website are not financial,
+        investment, tax, accounting or legal advice.
 
     </div>
-</section>
 
-<section id="about" class="about">
-    <div class="about-content">
 
-        <h2 class="section-title">About Apperley Finance</h2>
+    <!-- FOOTER -->
+    <footer>
 
-        <p>
-            Apperley Finance provides practical business and finance support with
-            a focus on organisation, accuracy and clear financial information.
+        <p class="footer-brand">
+            Apperley <span>Finance</span>
         </p>
 
         <p>
-            With experience across business operations, financial administration,
-            budgeting and event management, our aim is to provide straightforward
-            support that helps businesses manage their day-to-day financial and
-            administrative requirements.
+            Practical Finance &amp; Excel Support
         </p>
 
-    </div>
-</section>
+        <p>
+            &copy; 2026 Apperley Finance. All rights reserved.
+        </p>
 
-<section id="contact" class="contact">
-
-    <h2 class="section-title">Get in Touch</h2>
-
-    <p>
-        Interested in business or finance support?
-    </p>
-
-    <p>
-        Email:
-        <a href="mailto:chrissapperley66@gmail.com">
-            chrissapperley66@gmail.com
-        </a>
-    </p>
-
-    <br>
-
-    <a href="mailto:chrissapperley66@gmail.com" class="button">
-        Contact Apperley Finance
-    </a>
-
-</section>
-
-<footer>
-    <p>© 2026 Apperley Finance. All rights reserved.</p>
-</footer>
+    </footer>
 
 </body>
 </html>
