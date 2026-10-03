@@ -1,9 +1,12 @@
-index.html
-downloads/
-├── Apperley_Finance_Income_Statement.xlsx
-├── Apperley_Finance_Cash_Flow_Planner.xlsx
-├── Apperley_Finance_Personal_Budget_Planner.xlsx
-├── Apperley_Finance_Budget_vs_Actual.xlsx
-├── Apperley_Finance_Debt_Repayment_Tracker.xlsx
-├── Apperley_Finance_Household_Bills_Tracker.xlsx
-└── Apperley_Finance_Business_Income_Expenses.xlsx
+📁 Repository
+│
+├── 📄 index.html
+│
+└── 📁 downloads
+    ├── 📊 Apperley_Finance_Income_Statement.xlsx
+    ├── 📊 Apperley_Finance_Cash_Flow_Planner.xlsx
+    ├── 📊 Apperley_Finance_Personal_Budget_Planner.xlsx
+    ├── 📊 Apperley_Finance_Budget_vs_Actual.xlsx
+    ├── 📊 Apperley_Finance_Debt_Repayment_Tracker.xlsx
+    ├── 📊 Apperley_Finance_Household_Bills_Tracker.xlsx
+    └── 📊 Apperley_Finance_Business_Income_Expenses.xlsx
